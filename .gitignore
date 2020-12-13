@@ -116,5 +116,6 @@ dist
 .pnp.*
 
 # Parcel related files
+build/
 dist/
 .cache/

@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Charset -->
     <meta charset="UTF-8" />
 
     <title>Crawler</title>
 
+    <!-- Pragma directives -->
     <meta http-equiv="cleartype" content="on" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self' data: blob:; style-src 'self';" />
+
+    <!-- Responsive Scaling -->
     <meta name="MobileOptimized" content="320" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     
+    <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
-    <script type="text/javascript" src="app.ts"></script>
+    <!-- Load game -->
+    <script type="text/javascript" src="game.ts"></script>
   </body>
 </html>
