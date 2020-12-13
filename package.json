@@ -2,7 +2,6 @@
   "name": "crawler",
   "version": "0.0.0001",
   "description": "A simple dungeon crawler written in typescript using phaser and parcel.",
-  "main": "app.js",
   "repository": "https://sebastianrigadevelopment@dev.azure.com/sebastianrigadevelopment/Crawler/_git/Crawler",
   "author": "Sebastian Riga",
   "license": "MIT",
@@ -10,7 +9,7 @@
   "scripts": {
     "init": "yarn install",
     "develope": "parcel src/index.html -p 3000",
-    "build": "parcel build src/index.html --out-dir dist",
+    "build": "parcel build src/index.html --dist-dir dist",
     "clear": "rm -rf node_modules dist .parcel-cache",
     "clear:dist": "rm -rf dist",
     "clear:parcel_cache": "rm -rf .parcel-cache",
