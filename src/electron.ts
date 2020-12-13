@@ -43,6 +43,7 @@ const browserWindowConfig: Electron.BrowserWindowConstructorOptions = {
     backgroundColor: '#000000',
     webPreferences: {
         nodeIntegration: true,
+        contextIsolation: false,
     },
 };
 
@@ -54,9 +55,12 @@ const browserWindowConfig: Electron.BrowserWindowConstructorOptions = {
 
 /**
  * Enables live reloading if electron is running in dev mode.
+ * Current: Soft- & Hard-Resets.
  */
 if (isDev) {
-    require('electron-reload')(__dirname);
+    require('electron-reload')(__dirname, {
+        electron: path.join(__dirname, '..', 'node_modules', 'electron'),
+    });
 }
 
 /**
