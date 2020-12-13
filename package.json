@@ -1,6 +1,6 @@
 {
   "name": "crawler",
-  "version": "0.0.0001",
+  "version": "0.0.0025",
   "description": "A simple dungeon crawler written in typescript using phaser and parcel.",
   "repository": "https://sebastianrigadevelopment@dev.azure.com/sebastianrigadevelopment/Crawler/_git/Crawler",
   "homepage": "./",
