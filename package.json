@@ -10,7 +10,7 @@
   "scripts": {
     "init": "yarn install",
     "develope": "parcel src/index.html -p 3000",
-    "build": "parcel src/index.html --out-dir dist",
+    "build": "parcel build src/index.html --out-dir dist",
     "clear": "rm -rf node_modules dist .parcel-cache",
     "clear:dist": "rm -rf dist",
     "clear:parcel_cache": "rm -rf .parcel-cache",
