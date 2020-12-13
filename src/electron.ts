@@ -1,32 +1,79 @@
-/// Core
+/**
+* ##########################################
+* # Imports
+* ##########################################
+*/
+
+// Core
 import * as path from 'path';
 
-/// Electron
-import { app, BrowserWindow } from 'electron';
+// Electron
+import * as isDev from 'electron-is-dev';
+import {app, BrowserWindow} from 'electron';
 
-if (process.env.ELECTRON_DEBUG === 'true' || process.env.ELECTRON_DEBUG === 'vscode') {
+/**
+* ##########################################
+* # Live reloading
+* ##########################################
+*/
+
+/**
+ * Enables live reloading if electron is running in dev mode.
+ * Uses package electron-reload (https://github.com/yan-foto/electron-reload#readme)
+ */
+if (isDev) {
     require('electron-reload')(__dirname);
 }
 
 /**
- * 
+* ##########################################
+* # Properties / Objects
+* ##########################################
+*/
+
+/**
+ * Main wrapper for web content to display it in an os native window.
+ *
+ * @see For a complete overview see {@link https://www.electronjs.org/docs/api/browser-window|BrowserWindow}.
  */
 let browserWindow: BrowserWindow = null;
 
-const config: Electron.BrowserWindowConstructorOptions = {
+/**
+ * Central configuration object for the electron BrowserWindow which
+ * wraps the web content of the app.
+ *
+ * @see For a full list of options see {@link https://www.electronjs.org/docs/api/browser-window#new-browserwindowoptions|BrowserWindowConstructorOptions}.
+ */
+// eslint-disable-next-line no-undef
+const browserWindowConfig: Electron.BrowserWindowConstructorOptions = {
     width: 1024,
     height: 768,
+    backgroundColor: '#000000',
     webPreferences: {
-        nodeIntegration: true
-    }
+        nodeIntegration: true,
+    },
 };
 
+/**
+* ##########################################
+* # Functions
+* ##########################################
+*/
+
+/**
+ * Creates the wrapping BrowserWindow with the browserWindowConfig
+ * and opens the DevTools if the app is running in development mode.
+ *
+ * @see isDev
+ * @see browserWindow
+ * @see browserWindowConfig
+ */
 function createWindow(): void {
-    browserWindow = new BrowserWindow(config);
+    browserWindow = new BrowserWindow(browserWindowConfig);
 
-    browserWindow.loadFile(path.join(__dirname, "index.html"));
+    browserWindow.loadFile(path.join(__dirname, 'index.html'));
 
-    if (process.env.ELECTRON_DEBUG === 'true') {
+    if (isDev) {
         browserWindow.webContents.openDevTools();
     }
 
@@ -35,14 +82,32 @@ function createWindow(): void {
     });
 }
 
+/**
+* ##########################################
+* # Electron Callbacks
+* ##########################################
+*/
+
+/**
+ * Calls the createWindow function to initialize the wrapping
+ * BrowserWindow when the app is ready.
+ *
+ * @see createWindow
+ */
 app.on('ready', createWindow);
 
+/**
+ *
+ */
 app.on('window-all-closed', () => {
     if (process.platform === 'darwin') {
         app.quit();
     }
 });
 
+/**
+ *
+ */
 app.on('activate', () => {
     if (browserWindow === null) {
         createWindow();

@@ -1,0 +1,6 @@
+node_modules
+ci
+dist
+build
+.tmp
+.cache
