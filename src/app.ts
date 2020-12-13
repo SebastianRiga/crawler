@@ -4,6 +4,7 @@ import * as Phaser from 'phaser';
  * Central game configuration object for Crawler.
  */
 const gameConfig: Phaser.Types.Core.GameConfig = {
+    title: 'Crawler',
     type: Phaser.AUTO,
     width: window.innerWidth,
     height: window.innerHeight,
@@ -16,6 +17,8 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
             debug: true
         }
     },
+    parent: 'game',
+    backgroundColor: '#000000',
     scene: [],
     scale: {
         zoom: 2

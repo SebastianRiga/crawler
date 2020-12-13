@@ -1,0 +1,10 @@
+html, body, canvas {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+body > canvas {
+    width: 100vw !important;
+    height: 100vh !important;
+}
