@@ -8,28 +8,20 @@
 import * as path from 'path';
 
 // Electron
-import * as isDev from 'electron-is-dev';
 import {app, BrowserWindow} from 'electron';
-
-/**
-* ##########################################
-* # Live reloading
-* ##########################################
-*/
-
-/**
- * Enables live reloading if electron is running in dev mode.
- * Uses package electron-reload (https://github.com/yan-foto/electron-reload#readme)
- */
-if (isDev) {
-    require('electron-reload')(__dirname);
-}
 
 /**
 * ##########################################
 * # Properties / Objects
 * ##########################################
 */
+
+/**
+ * Flag that indicates wether or not electron is running in development mode.
+ *
+ * @see app.isPackaged
+ */
+const isDev = !app.isPackaged;
 
 /**
  * Main wrapper for web content to display it in an os native window.
@@ -56,6 +48,19 @@ const browserWindowConfig: Electron.BrowserWindowConstructorOptions = {
 
 /**
 * ##########################################
+* # Live reloading
+* ##########################################
+*/
+
+/**
+ * Enables live reloading if electron is running in dev mode.
+ */
+if (isDev) {
+    require('electron-reload')(__dirname);
+}
+
+/**
+* ##########################################
 * # Functions
 * ##########################################
 */
@@ -71,7 +76,9 @@ const browserWindowConfig: Electron.BrowserWindowConstructorOptions = {
 function createWindow(): void {
     browserWindow = new BrowserWindow(browserWindowConfig);
 
-    browserWindow.loadFile(path.join(__dirname, 'index.html'));
+    const indexFile = isDev ? 'index.html' : 'index_dist.html';
+
+    browserWindow.loadFile(path.join(__dirname, indexFile));
 
     if (isDev) {
         browserWindow.webContents.openDevTools();
