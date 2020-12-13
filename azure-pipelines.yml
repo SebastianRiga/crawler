@@ -41,6 +41,6 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: '$(artifiactName)'
+    ArtifactName: '$(artifactName)'
     publishLocation: 'Container'
   displayName: "Publish build artifact"
