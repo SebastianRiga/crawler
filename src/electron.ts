@@ -92,21 +92,27 @@ function createWindow(): void {
  * Calls the createWindow function to initialize the wrapping
  * BrowserWindow when the app is ready.
  *
+ * @see app
  * @see createWindow
  */
 app.on('ready', createWindow);
 
 /**
+ * Exits the application when all windows are closed.
  *
+ * @see app
  */
 app.on('window-all-closed', () => {
-    if (process.platform === 'darwin') {
+    if (process.platform !== 'darwin') {
         app.quit();
     }
 });
 
 /**
+ * Creates the BrowserWindow when an interaction is triggerd
+ * and no BrowserWindow instance is available.
  *
+ * @see createWindow
  */
 app.on('activate', () => {
     if (browserWindow === null) {
