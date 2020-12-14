@@ -1,0 +1,1 @@
+Developed by Sebastian Riga (sebastian.riga.development@gmail.com)

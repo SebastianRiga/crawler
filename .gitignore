@@ -116,5 +116,10 @@ dist
 .pnp.*
 
 # Parcel related files
+.tmp/
+build/
 dist/
 .cache/
+
+# Better-Docs
+documentation/

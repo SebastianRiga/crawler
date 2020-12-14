@@ -11,18 +11,18 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     physics: {
         default: 'arcade',
         arcade: {
-            gravity: { 
-                y: 0 
+            gravity: {
+                y: 0,
             },
-            debug: true
-        }
+            debug: true,
+        },
     },
     parent: 'game',
     backgroundColor: '#000000',
     scene: [],
     scale: {
-        zoom: 2
-    }
+        zoom: 2,
+    },
 };
 
 export const game = new Phaser.Game(gameConfig);

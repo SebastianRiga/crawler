@@ -1,0 +1,11 @@
+{
+    "name": "Crawler",
+    "inputFiles": [
+        "./src"
+    ],
+    "mode": "modules",
+    "out": "documentation",
+    "media": "assets",
+    "json": "documentation/reflect.json",
+    "includeVersion": true
+}
