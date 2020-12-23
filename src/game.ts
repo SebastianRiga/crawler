@@ -1,4 +1,7 @@
-import * as Phaser from 'phaser';
+import Phaser from 'phaser';
+
+import { GameScene } from './scenes/game.scene';
+import { LoaderScene } from './scenes/loader.scene';
 
 /**
  * Central game configuration object for Crawler.
@@ -6,8 +9,8 @@ import * as Phaser from 'phaser';
 const gameConfig: Phaser.Types.Core.GameConfig = {
     title: 'Crawler',
     type: Phaser.AUTO,
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: 800,
+    height: 500,
     physics: {
         default: 'arcade',
         arcade: {
@@ -19,10 +22,10 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     },
     parent: 'game',
     backgroundColor: '#000000',
-    scene: [],
-    scale: {
-        zoom: 2,
-    },
+    scene: [
+        LoaderScene,
+        GameScene,
+    ],
 };
 
 export const game = new Phaser.Game(gameConfig);

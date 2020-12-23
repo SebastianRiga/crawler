@@ -8,7 +8,7 @@
 import * as path from 'path';
 
 // Electron
-import {app, BrowserWindow} from 'electron';
+import { app, BrowserWindow } from 'electron';
 
 /**
 * ##########################################
@@ -34,7 +34,8 @@ let browserWindow: BrowserWindow = null;
  * Central configuration object for the electron BrowserWindow which
  * wraps the web content of the app.
  *
- * @see For a full list of options see {@link https://www.electronjs.org/docs/api/browser-window#new-browserwindowoptions|BrowserWindowConstructorOptions}.
+ * @see For a full list of options see
+ * {@link https://www.electronjs.org/docs/api/browser-window#new-browserwindowoptions|BrowserWindowConstructorOptions}.
  */
 // eslint-disable-next-line no-undef
 const browserWindowConfig: Electron.BrowserWindowConstructorOptions = {

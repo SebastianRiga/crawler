@@ -24,6 +24,27 @@
         "indent": [
             "error",
             4
+        ],
+        "max-len": [
+            "error",
+            {
+                "code": 140
+            }
+        ],
+        "valid-jsdoc": [
+            "error", 
+            { 
+                "requireReturnType": false, 
+                "requireParamDescription": true, 
+                "requireReturnDescription": true, 
+                "requireParamType": false, 
+                "requireReturn": false, 
+                "matchDescription": "" 
+            }
+        ],
+        "object-curly-spacing": [
+            "error",
+            "always"
         ]
     }
 }
