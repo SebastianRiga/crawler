@@ -22,11 +22,11 @@ steps:
   displayName: "Creating build timestamp"
 
 - script: |
-    yarn install
+    npm run init
   displayName: 'Install dependencies'
 
 - script: |
-    npm run build
+    npm run dist:browser
   displayName: "Build dist"
   
 - task: ArchiveFiles@2
