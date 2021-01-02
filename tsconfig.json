@@ -4,6 +4,7 @@
       "baseUrl": "./",
       "outDir": "./dist/out-tsc",
       "allowSyntheticDefaultImports": true,
+      "resolveJsonModule": true,
       "sourceMap": true,
       "declaration": false,
       "downlevelIteration": true,

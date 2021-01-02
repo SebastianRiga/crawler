@@ -1,9 +1,42 @@
+/**
+ * Font families.
+ */
+@import '../assets/fonts/fonts.css';
+
+/** 
+ * vex-js css for dialogs.
+ */
+@import '../assets/dialogs/vex.css';
+@import '../assets/dialogs/vex-theme-os.css';
+@import '../assets/dialogs/vex-theme-top.css';
+@import '../assets/dialogs/vex-theme-plain.css';
+@import '../assets/dialogs/vex-theme-default.css';
+@import '../assets/dialogs/vex-theme-wireframe.css';
+@import '../assets/dialogs/vex-theme-flat-attack.css';
+@import '../assets/dialogs/vex-theme-bottom-right-corner.css';
+
+/**
+ * CSS class to bootstrap the loaded fonts.
+ */
+.font-bootstrap {
+  position: absolute;
+  visibility: hidden;
+}
+
+/**
+ * Remove all margins and hide the overflow for the container elements
+ * of the game.
+ */
 html, body, canvas {
   margin: 0 !important;
   padding: 0 !important;
   overflow: hidden !important;
 }
 
+/**
+ * Make the canvas created by phaser fill the complete view port of the
+ * avialable window to enable responsive scaling.
+ */
 body > canvas {
     width: 100vw !important;
     height: 100vh !important;

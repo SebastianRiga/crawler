@@ -87,6 +87,9 @@ function createWindow(): void {
 
     if (isDev) {
         browserWindow.webContents.openDevTools();
+    } else {
+        browserWindow.setMenu(null);
+        browserWindow.setFullScreen(true);
     }
 
     browserWindow.on('closed', () => {

@@ -55,8 +55,12 @@
     "wait-on": "^5.2.0"
   },
   "dependencies": {
+    "@mikewesthad/dungeon": "^2.0.1",
+    "original-fs": "^1.1.0",
     "phaser": "^3.24.1",
-    "src": "^1.1.2"
+    "src": "^1.1.2",
+    "vex-dialog": "^1.1.0",
+    "vex-js": "^4.1.0"
   },
   "parcelCleanPaths": [
     "dist"
@@ -77,6 +81,6 @@
         "watcherGlob": "**",
         "staticOutDir": "assets"
       }
-    ] 
+    ]
   }
 }

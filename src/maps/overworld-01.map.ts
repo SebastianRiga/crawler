@@ -1,44 +1,23 @@
-import { Map, MapConfiguration, MapLayerCollection } from './map';
+import { Map } from './map';
+
+import { PhaserLayerCollection } from '../types/phaser';
+import { Overworld01AssetConfig } from '../config/overworld-01-asset.config';
 
 /**
  *
  */
 export class Overworld01Map extends Map {
-    protected assetConfiguration: MapConfiguration = {
-        images: {},
-        tilemap: {
-            key: 'overworld-01',
-            url: 'assets/maps/overworld-01.json',
-        },
-        layers: {
-            floor: {
-                key: 'Floor',
-                type: 'static',
-                tilesets: [
-                    {
-                        key: 'Floor',
-                        url: 'assets/tiles/Objects/Floor.png',
-                    },
-                ],
-            },
-            ground: {
-                key: 'Ground',
-                type: 'static',
-                tilesets: [
-                    {
-                        key: 'Ground0',
-                        url: 'assets/tiles/Objects/Ground0.png',
-                    },
-                ],
-            },
-        },
-    };
+    /**
+     * @inheritdoc
+     */
+    constructor() {
+        super(Overworld01AssetConfig);
+    }
 
     /**
-     * f
-     * @param layers f
+     * @inheritdoc
      */
-    protected configureLayers(layers: MapLayerCollection): void {
-        console.log(this.tilesets.Floor.value.name);
+    public configureLayers(layers: PhaserLayerCollection): void {
+        layers.Walls.setCollisionByExclusion([-1]);
     }
 }

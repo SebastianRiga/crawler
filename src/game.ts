@@ -1,7 +1,9 @@
 import Phaser from 'phaser';
+import { BootScene } from './scenes/boot.scene';
+import { CharacterCreationScene } from './scenes/character-creation.scene';
 
 import { GameScene } from './scenes/game.scene';
-import { LoaderScene } from './scenes/loader.scene';
+import { TitleScene } from './scenes/title.scene';
 
 /**
  * Central game configuration object for Crawler.
@@ -9,8 +11,8 @@ import { LoaderScene } from './scenes/loader.scene';
 const gameConfig: Phaser.Types.Core.GameConfig = {
     title: 'Crawler',
     type: Phaser.AUTO,
-    width: 800,
-    height: 500,
+    width: 1280,
+    height: 720,
     physics: {
         default: 'arcade',
         arcade: {
@@ -20,10 +22,22 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
             debug: true,
         },
     },
+    fps: {
+        min: 30,
+        target: 60,
+    },
     parent: 'game',
     backgroundColor: '#000000',
+    render: {
+        antialias: true,
+        pixelArt: true,
+        roundPixels: true,
+        antialiasGL: true,
+    },
     scene: [
-        LoaderScene,
+        BootScene,
+        TitleScene,
+        CharacterCreationScene,
         GameScene,
     ],
 };
